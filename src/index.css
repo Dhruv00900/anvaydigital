@@ -1,0 +1,258 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    cursor: none;
+  }
+  
+  @media (max-width: 768px) {
+    html {
+      cursor: auto;
+    }
+  }
+  
+  body {
+    background-color: #ffffff;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+}
+
+/* Lenis Smooth Scroll - CRITICAL FIX */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* components/globals.css */
+@media (max-width: 768px) {
+  /* Prevent zoom on input focus for iOS */
+  input, select, textarea {
+    font-size: 16px;
+  }
+  
+  /* Improve tap highlights */
+  a, button {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Better mobile menu animation */
+.mobile-menu {
+  will-change: transform, opacity;
+}
+
+/* Improved scrollbar for mobile menu */
+.mobile-menu::-webkit-scrollbar {
+  width: 4px;
+}
+
+.mobile-menu::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+.mobile-menu::-webkit-scrollbar-thumb {
+  background: #eab308;
+  border-radius: 4px;
+}
+/* Animation Classes */
+.animate-fade-up {
+  animation: fadeUp 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DD8519;
+  border-radius: 4px;
+}
+
+/* Section Transitions */
+.section-transition {
+  transition: background-color 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              color 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* Hover Effects */
+.hover-lift {
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+}
+
+.hover-scale {
+  transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* Image Zoom */
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-zoom {
+  transition: transform 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.img-zoom:hover {
+  transform: scale(1.08);
+}
+
+/* Text Selection */
+::selection {
+  background-color:#f1c48d;
+  color: #000000;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* GPU Acceleration - FIX FOR SMOOTH SCROLL */
+.app-wrapper,
+.app-main,
+section {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Animation Performance */
+.animate-text {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .hover-lift:hover,
+  .hover-scale:hover,
+  .img-zoom:hover {
+    transform: none;
+  }
+  
+  .section-transition {
+    transition: none;
+  }
+}
+
+/* Reduce Motion Preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

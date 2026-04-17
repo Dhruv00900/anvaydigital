@@ -1,0 +1,314 @@
+/* App.css - Premium Typography & Spacing */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  overflow-x: hidden;
+  background-color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-wrapper {
+  position: relative;
+  background-color: #000000;
+}
+
+/* Premium Smooth Scrolling */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Custom Scrollbar - Premium */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FFD600;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6c200;
+}
+
+/* Section Transition Styles */
+.section-transition {
+  transition: background-color 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1),
+              color 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+/* Premium Animation Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes glowPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 214, 0, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(255, 214, 0, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 214, 0, 0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes borderGlow {
+  0% {
+    border-color: rgba(255, 214, 0, 0.3);
+  }
+  50% {
+    border-color: rgba(255, 214, 0, 0.8);
+  }
+  100% {
+    border-color: rgba(255, 214, 0, 0.3);
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 1s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.6s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-slide-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+.animate-slide-right {
+  animation: slideInRight 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1) forwards;
+}
+
+/* Premium Hover Effects */
+.hover-lift {
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-12px);
+}
+
+.hover-scale {
+  transition: transform 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+/* Image Zoom Container */
+.img-zoom-container {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
+.img-zoom {
+  transition: transform 0.8s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.img-zoom:hover {
+  transform: scale(1.1);
+}
+
+/* Glow Effect */
+.glow-effect {
+  animation: glowPulse 2s infinite;
+}
+
+/* Float Animation */
+.float-animation {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Border Glow */
+.border-glow {
+  animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* Text Selection */
+::selection {
+  background-color: #FFD600;
+  color: #000000;
+}
+
+/* Typography Refinements */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+p {
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  h1 {
+    letter-spacing: -0.01em;
+  }
+  
+  p {
+    line-height: 1.5;
+  }
+}
+/* App.css - ADD THIS */
+.app-wrapper {
+  position: relative;
+  background-color: #000000;
+}
+
+.app-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure all sections have proper height */
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* Fix for GSAP animations */
+.gsap-animated {
+  will-change: transform, opacity;
+}
+/* Google Reviews Widget Custom Styling */
+.google-reviews-widget {
+  --primary-color: #FFD600;
+  --secondary-color: #000000;
+  --text-color: #1a1a1a;
+  --border-radius: 16px;
+}
+
+/* If using Elfsight widget */
+.eapps-google-reviews-widget {
+  font-family: 'Inter', sans-serif !important;
+}
+
+.eapps-google-reviews-widget .eapps-google-reviews-rating-stars {
+  color: #FFD600 !important;
+}
+
+.eapps-google-reviews-widget .eapps-google-reviews-review-card {
+  border-radius: 16px !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1) !important;
+  transition: transform 0.3s ease !important;
+}
+
+.eapps-google-reviews-widget .eapps-google-reviews-review-card:hover {
+  transform: translateY(-5px) !important;
+}
+
+/* Review author name */
+.eapps-google-reviews-widget .eapps-google-reviews-review-author-name {
+  font-weight: 700 !important;
+  color: #000000 !important;
+}
+
+/* Review text */
+.eapps-google-reviews-widget .eapps-google-reviews-review-text {
+  color: #4a4a4a !important;
+  line-height: 1.6 !important;
+}
+
+/* Rating stars color */
+.eapps-google-reviews-widget .eapps-google-reviews-star {
+  color:#DD8519 !important;
+}
+
+/* Button styling */
+.eapps-google-reviews-widget .eapps-google-reviews-button {
+  background-color: #FFD600 !important;
+  color: #000000 !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+}
